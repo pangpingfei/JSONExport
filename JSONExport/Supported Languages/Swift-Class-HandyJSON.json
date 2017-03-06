@@ -62,15 +62,15 @@
     "briefDescription": "Defines how your JSON objects can be mapped to Swift structures using the built-in NSJSONSerialization class",
     "utilityMethods": [
                        {
-                       "forEachProperty": "\t\t\"<!JsonKeyName!>\" ~~> <!VarName!>,\n",
+                       "forEachProperty": "\t\tif <!VarName!> != nil {\n\t\t\tdictionary[\"<!JsonKeyName!>\"] = <!VarName!>\n\t\t}\n",
                        "bodyEnd": "\t}\n",
-                       "signature": "\tpublic func toJSON() -> JSON? ",
-                       "forEachCustomTypeProperty": "\t\t\"<!JsonKeyName!>\" ~~> <!VarName!>,\n",
-                       "forEachArrayOfCustomTypeProperty": "\t\t\"<!JsonKeyName!>\" ~~> <!VarName!>,\n",
-                       "returnStatement": "\t\t])\n",
-                       "body": "\t\treturn jsonify([\n",
-                       "comment": "\n\t//MARK: Encodable\n",
-                       "bodyStart": "{\n"
+                       "signature": "\tfunc toDictionary() -> [String : Any]",
+                       "forEachCustomTypeProperty": "\t\tif <!VarName!> != nil {\n\t\t\tdictionary[\"<!JsonKeyName!>\"] = <!VarName!>.toDictionary()\n\t\t}\n",
+                       "forEachArrayOfCustomTypeProperty": "\t\tif <!VarName!> != nil {\n\t\t\tvar dictionaryElements = [[String : Any]]()\n\t\t\tfor <!VarName!>Element in <!VarName!> {\n\t\t\t\tdictionaryElements.append(<!VarName!>Element.toDictionary())\n\t\t\t}\n\t\t\tdictionary[\"<!JsonKeyName!>\"] = dictionaryElements\n\t\t}\n",
+                       "returnStatement": "\t\treturn dictionary\n",
+                       "body": "\t\tvar dictionary = [String : Any]()\n",
+                       "comment": "\t/**\n\t * Returns all the available property values in the form of [String : Any] object where the key is the approperiate json key and the value is the value of the corresponding property\n\t */\n",
+                       "bodyStart": " {\n"
                        }
                        ],
     "dataTypes": {
@@ -86,35 +86,32 @@
                                             "[",
                                             "]"
                                             ],
+	"defaultParentWithUtilityMethods": "HandyJSON",
     "constructors": [
                      {
                      "fetchBasicTypeWithSpecialNeedsPropertyFromMap": "",
-                     "bodyStart": "{\n",
+                     "bodyStart": " {\n",
                      "bodyEnd": "\t}\n",
-                     "fetchBasicTypePropertyFromMap": "\t\t<!VarName!> = \"<!JsonKeyName!>\" <~~ json\n",
-                     "signature": "\tpublic init?(json: JSON)",
-                     "fetchArrayOfCustomTypePropertyFromMap": "\t\t<!VarName!> = \"<!JsonKeyName!>\" <~~ json\n",
-                     "comment": "\n\t//MARK: Decodable\n",
-                     "fetchCustomTypePropertyFromMap": "\t\t<!VarName!> = \"<!JsonKeyName!>\" <~~ json\n"
+                     "fetchBasicTypePropertyFromMap": "\t\t<!VarName!> = dictionary[\"<!JsonKeyName!>\"] as? <!VarType!>\n",
+                     "signature": "\tinit(from dictionary: [String : Any])",
+                     "fetchArrayOfCustomTypePropertyFromMap": "\t\t<!VarName!> = <!VarType!>()\n\t\tif let <!VarName!>Array = dictionary[\"<!JsonKeyName!>\"] as? [[String : Any]] {\n\t\t\tfor dic in <!VarName!>Array {\n\t\t\t\tlet value = <!ElementType!>(fromDictionary: dic)\n\t\t\t\t<!VarName!>.append(value)\n\t\t\t}\n\t\t}\n",
+                     "comment": "\trequired init() {}\n\n\t/**\n\t * Instantiate the instance using the passed dictionary values to set the properties values\n\t */\n",
+                     "fetchCustomTypePropertyFromMap": "\t\tif let <!VarName!>Data = dictionary[\"<!JsonKeyName!>\"] as? [String : Any] {\n\t\t\t<!VarName!> = <!VarType!>(fromDictionary: <!VarName!>Data)\n\t\t}\n"
                      }
                      ],
-    "modelDefinition": "\n//MARK: - <!ModelName!>\npublic struct <!ModelName!>: Glossy ",
+    "modelDefinition": "\nclass <!ModelName!>",
     "genericType": "AnyObject",
     "getter": "",
     "setter": "",
+	"displayLangName": "Swift - Class - HandyJSON",
     "fileExtension": "swift",
+	"basicTypesWithSpecialFetchingNeeds": [
+	],
     "arrayType": "[<!ElementType!>]",
-    "basicTypesWithSpecialFetchingNeeds": [
-    ],
-    "displayLangName": "Swift - Struct - Gloss",
-    "instanceVarDefinition": "\tpublic let <!VarName!> : <!VarType!>!\n",
+	"modelDefinitionWithParent": "\n\nclass <!ModelName!>: <!ParentClass!>",
+    "instanceVarDefinition": "\tvar <!VarName!>: <!VarType!>?\n",
     "supportsFirstLineStatement": "false",
     "modelEnd": "\n}",
-    "staticImports": "import Foundation \nimport Gloss",
-    "langName": "Swift",
-    "author" : {
-        "name" : "CodeEagle",
-        "website" : "https://github.com/CodeEagle"
-    }
-    
+    "staticImports": "import Foundation \nimport HandyJSON",
+    "langName": "Swift"
 }

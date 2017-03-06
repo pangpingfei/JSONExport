@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  JSONExport
+
+  Created by 庞平飞 on 2017/3/4.
+  Copyright © 2017年 Ahmed Ali. All rights reserved.
+*/
+
+
+"Choose JSON file" = "打开";
+"Valid JSON structure" = "JSON有效";
+"It seems your JSON object is not valid!" = "JSON无效！";
+"Choose" = "选择";
+"Success!" = "成功！";
+"Your model files have been generated successfully." = "你的模型文件已经成功生成！";

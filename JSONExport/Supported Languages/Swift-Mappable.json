@@ -1,5 +1,5 @@
 {
-    "modelStart": "{\n",
+    "modelStart": " {\n",
     "importForEachCustomType": "",
     "reservedKeywords": [
                          "abstract",
@@ -84,11 +84,11 @@
                        "bodyStart": "\n\t{\n"
                        },
                        {
-                       "forEachProperty": "\t\tif <!VarName!> != nil{\n\t\t\taCoder.encode(<!VarName!>, forKey: \"<!JsonKeyName!>\")\n\t\t}\n",
+                       "forEachProperty": "\t\tif <!VarName!> != nil {\n\t\t\taCoder.encode(<!VarName!>, forKey: \"<!JsonKeyName!>\")\n\t\t}\n",
                        "bodyEnd": "\n\t}\n",
                        "signature": "    @objc func encode(with aCoder: NSCoder)",
-                       "forEachCustomTypeProperty": "\t\tif <!VarName!> != nil{\n\t\t\taCoder.encode(<!VarName!>, forKey: \"<!JsonKeyName!>\")\n\t\t}\n",
-                       "forEachArrayOfCustomTypeProperty": "\t\tif <!VarName!> != nil{\n\t\t\taCoder.encode(<!VarName!>, forKey: \"<!JsonKeyName!>\")\n\t\t}\n",
+                       "forEachCustomTypeProperty": "\t\tif <!VarName!> != nil {\n\t\t\taCoder.encode(<!VarName!>, forKey: \"<!JsonKeyName!>\")\n\t\t}\n",
+                       "forEachArrayOfCustomTypeProperty": "\t\tif <!VarName!> != nil {\n\t\t\taCoder.encode(<!VarName!>, forKey: \"<!JsonKeyName!>\")\n\t\t}\n",
                        "returnStatement": "",
                        "body": "",
                        "comment": "\n    /**\n    * NSCoding required method.\n    * Encodes mode properties into the decoder\n    */\n",

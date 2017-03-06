@@ -1,5 +1,5 @@
 {
-    "modelStart": "{\n",
+    "modelStart": " {\n",
     "importForEachCustomType": "",
     "reservedKeywords": [
                          "abstract",
@@ -62,14 +62,14 @@
     "briefDescription": "Defines how your JSON objects can be mapped to Swift structures using the built-in NSJSONSerialization class",
     "utilityMethods": [
                        {
-                       "forEachProperty": "\t\tif <!VarName!> != nil{\n\t\t\tdictionary[\"<!JsonKeyName!>\"] = <!VarName!>\n\t\t}\n",
+                       "forEachProperty": "\t\tif <!VarName!> != nil {\n\t\t\tdictionary[\"<!JsonKeyName!>\"] = <!VarName!>\n\t\t}\n",
                        "bodyEnd": "\t}\n",
-                       "signature": "\tfunc toDictionary() -> [String:Any]",
-                       "forEachCustomTypeProperty": "\t\tif <!VarName!> != nil{\n\t\t\tdictionary[\"<!JsonKeyName!>\"] = <!VarName!>.toDictionary()\n\t\t}\n",
-                       "forEachArrayOfCustomTypeProperty": "\t\tif <!VarName!> != nil{\n\t\t\tvar dictionaryElements = [[String:Any]]()\n\t\t\tfor <!VarName!>Element in <!VarName!> {\n\t\t\t\tdictionaryElements.append(<!VarName!>Element.toDictionary())\n\t\t\t}\n\t\t\tdictionary[\"<!JsonKeyName!>\"] = dictionaryElements\n\t\t}\n",
+                       "signature": "\tfunc toDictionary() -> [String : Any]",
+                       "forEachCustomTypeProperty": "\t\tif <!VarName!> != nil {\n\t\t\tdictionary[\"<!JsonKeyName!>\"] = <!VarName!>.toDictionary()\n\t\t}\n",
+                       "forEachArrayOfCustomTypeProperty": "\t\tif <!VarName!> != nil {\n\t\t\tvar dictionaryElements = [[String : Any]]()\n\t\t\tfor <!VarName!>Element in <!VarName!> {\n\t\t\t\tdictionaryElements.append(<!VarName!>Element.toDictionary())\n\t\t\t}\n\t\t\tdictionary[\"<!JsonKeyName!>\"] = dictionaryElements\n\t\t}\n",
                        "returnStatement": "\t\treturn dictionary\n",
-                       "body": "\t\tvar dictionary = [String:Any]()\n",
-                       "comment": "\t/**\n\t * Returns all the available property values in the form of [String:Any] object where the key is the approperiate json key and the value is the value of the corresponding property\n\t */\n",
+                       "body": "\t\tvar dictionary = [String : Any]()\n",
+                       "comment": "\t/**\n\t * Returns all the available property values in the form of [String : Any] object where the key is the approperiate json key and the value is the value of the corresponding property\n\t */\n",
                        "bodyStart": "\n\t{\n"
                        }
                        ],

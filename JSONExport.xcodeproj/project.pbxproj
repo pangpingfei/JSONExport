@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EE511DE1E6A4AAB001F1B8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0EE511E01E6A4AAB001F1B8A /* Localizable.strings */; };
+		0EE511E31E6A6210001F1B8A /* Swift-Struct-HandyJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE511E21E6A6210001F1B8A /* Swift-Struct-HandyJSON.json */; };
+		0EE511E51E6A6523001F1B8A /* Swift-Class-HandyJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EE511E41E6A6523001F1B8A /* Swift-Class-HandyJSON.json */; };
 		166AF5CE1CEF6C3600516EDD /* Swift-Struct-Gloss.json in Resources */ = {isa = PBXBuildFile; fileRef = 166AF5CD1CEF6C3600516EDD /* Swift-Struct-Gloss.json */; };
 		608896441CF278440074CB80 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608896431CF278440074CB80 /* Author.swift */; };
 		60FB8FF01B9B361600290979 /* Java-Android Realm.json in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8FE61B9B361600290979 /* Java-Android Realm.json */; };
@@ -45,6 +48,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E00667D1E6A8F960014273A /* JSONExport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JSONExport.entitlements; sourceTree = "<group>"; };
+		0EE511DB1E697C61001F1B8A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		0EE511DF1E6A4AAB001F1B8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0EE511E11E6A4AB5001F1B8A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0EE511E21E6A6210001F1B8A /* Swift-Struct-HandyJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-Struct-HandyJSON.json"; path = "Supported Languages/Swift-Struct-HandyJSON.json"; sourceTree = "<group>"; };
+		0EE511E41E6A6523001F1B8A /* Swift-Class-HandyJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-Class-HandyJSON.json"; path = "Supported Languages/Swift-Class-HandyJSON.json"; sourceTree = "<group>"; };
 		166AF5CD1CEF6C3600516EDD /* Swift-Struct-Gloss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-Struct-Gloss.json"; path = "Supported Languages/Swift-Struct-Gloss.json"; sourceTree = "<group>"; };
 		608896431CF278440074CB80 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		60FB8FE61B9B361600290979 /* Java-Android Realm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Java-Android Realm.json"; path = "Supported Languages/Java-Android Realm.json"; sourceTree = "<group>"; };
@@ -166,6 +175,8 @@
 				60FB8FEE1B9B361600290979 /* Swift-Struct.json */,
 				98978FC01D5B6B19000C1846 /* Swift-Struct-Unbox.json */,
 				60FB8FEF1B9B361600290979 /* SwiftyJSON-Class.json */,
+				0EE511E21E6A6210001F1B8A /* Swift-Struct-HandyJSON.json */,
+				0EE511E41E6A6523001F1B8A /* Swift-Class-HandyJSON.json */,
 			);
 			name = "Supported Languages";
 			sourceTree = "<group>";
@@ -202,6 +213,7 @@
 		E2FA87B71A059AC100648EB6 /* JSONExport */ = {
 			isa = PBXGroup;
 			children = (
+				0E00667D1E6A8F960014273A /* JSONExport.entitlements */,
 				E20A0DA61A1170C3003B3D62 /* Third party libraries */,
 				E20A0DA51A1170B6003B3D62 /* Misc */,
 				E20A0DA41A117096003B3D62 /* File content generators */,
@@ -220,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				E2FA87B91A059AC100648EB6 /* Info.plist */,
+				0EE511E01E6A4AAB001F1B8A /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -258,6 +271,11 @@
 					E2FA87B41A059AC100648EB6 = {
 						CreatedOnToolsVersion = 6.1;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -268,6 +286,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = E2FA87AC1A059AC100648EB6;
 			productRefGroup = E2FA87B61A059AC100648EB6 /* Products */;
@@ -292,11 +311,14 @@
 				60FB8FF11B9B361600290979 /* Java-Android.json in Resources */,
 				60FB8FF81B9B361600290979 /* Swift-Struct.json in Resources */,
 				E2FA87BF1A059AC100648EB6 /* Images.xcassets in Resources */,
+				0EE511E31E6A6210001F1B8A /* Swift-Struct-HandyJSON.json in Resources */,
+				0EE511E51E6A6523001F1B8A /* Swift-Class-HandyJSON.json in Resources */,
 				98978FC11D5B6B19000C1846 /* Swift-Struct-Unbox.json in Resources */,
 				60FB8FFD1B9B3F6400290979 /* Swift-Realm.json in Resources */,
 				60FB8FF71B9B361600290979 /* Swift-Mappable.json in Resources */,
 				60FB8FF61B9B361600290979 /* Swift-CoreData.json in Resources */,
 				60FB8FF91B9B361600290979 /* SwiftyJSON-Class.json in Resources */,
+				0EE511DE1E6A4AAB001F1B8A /* Localizable.strings in Resources */,
 				60FB8FF21B9B361600290979 /* ObjectiveC-CoreData-iOS.json in Resources */,
 				E2FA87C21A059AC100648EB6 /* Main.storyboard in Resources */,
 				166AF5CE1CEF6C3600516EDD /* Swift-Struct-Gloss.json in Resources */,
@@ -335,10 +357,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0EE511E01E6A4AAB001F1B8A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0EE511DF1E6A4AAB001F1B8A /* Base */,
+				0EE511E11E6A4AB5001F1B8A /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E2FA87C01A059AC100648EB6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E2FA87C11A059AC100648EB6 /* Base */,
+				0EE511DB1E697C61001F1B8A /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -350,6 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -396,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -436,10 +470,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = JSONExport/JSONExport.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = JSONExport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ahmed.ali.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = PangPingfei.JSONExport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JSONExport/JSONExport-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -452,10 +487,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = JSONExport/JSONExport.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = JSONExport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ahmed.ali.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = PangPingfei.JSONExport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JSONExport/JSONExport-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

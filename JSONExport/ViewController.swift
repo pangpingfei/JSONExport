@@ -197,7 +197,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
         oPanel.canChooseFiles = true
         oPanel.allowsMultipleSelection = false
         oPanel.allowedFileTypes = ["json","JSON"]
-        oPanel.prompt = "Choose JSON file"
+        oPanel.prompt = NSLocalizedString("Choose JSON file", comment: "Choose JSON file")
         
         oPanel.beginSheetModal(for: self.view.window!, completionHandler: { (button : Int) -> Void in
             if button == NSFileHandlingPanelOKButton{
@@ -285,7 +285,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
         openPanel.canChooseFiles = false
         openPanel.canChooseDirectories = true
         openPanel.canCreateDirectories = true
-        openPanel.prompt = "Choose"
+        openPanel.prompt = NSLocalizedString("Choose", comment: "Choose")
         openPanel.beginSheetModal(for: self.view.window!, completionHandler: { (button : Int) -> Void in
             if button == NSFileHandlingPanelOKButton{
                 
@@ -336,8 +336,8 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
     func showDoneSuccessfully()
     {
         let notification = NSUserNotification()
-        notification.title = "Success!"
-        notification.informativeText = "Your \(selectedLang.langName) model files have been generated successfully."
+        notification.title = NSLocalizedString("Success!", comment: "Success!")
+		notification.informativeText = NSLocalizedString("Your model files have been generated successfully.", comment: "Your model files have been generated successfully.")
         notification.deliveryDate = Date()
 
         let center = NSUserNotificationCenter.default
@@ -421,7 +421,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
                     self.files = Array(self.files.reversed())
                     runOnUiThread{
                         self.sourceText.isEditable = true
-                        self.showSuccessStatus("Valid JSON structure")
+                        self.showSuccessStatus(NSLocalizedString("Valid JSON structure", comment: "Valid JSON structure"))
                         self.saveButton.isEnabled = true
                         
                         self.tableView.reloadData()
@@ -434,7 +434,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
                         if error != nil{
                             print(error!)
                         }
-                        self.showErrorStatus("It seems your JSON object is not valid!")
+                        self.showErrorStatus(NSLocalizedString("It seems your JSON object is not valid!", comment: "It seems your JSON object is not valid!"))
                     })
                     
                 } catch {
